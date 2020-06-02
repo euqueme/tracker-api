@@ -41,6 +41,8 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -72,6 +74,7 @@ RSpec.configure do |config|
 
   # add `FactoryBot` methods
   config.include FactoryBot::Syntax::Methods
+  config.include RequestSpecHelper, type: :request
 
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
   config.before(:suite) do
