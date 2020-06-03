@@ -10,7 +10,7 @@ resource "Exercise", acceptance: true do
   end
 
   get "/exercises" do
-    example_request "Listing Exercises" do
+    example_request "Listing exercises" do
       explanation "List all the exercises in the system"
       expect(status).to eq 200
     end

@@ -5,7 +5,7 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Listing Exercises",
+          "description": "Listing exercises",
           "link": "exercise/listing_exercises.json",
           "groups": "all",
           "route": "/exercises",
@@ -39,7 +39,7 @@
       "explanation": null,
       "examples": [
         {
-          "description": "Listing Measurements",
+          "description": "Listing measurements",
           "link": "measurement/listing_measurements.json",
           "groups": "all",
           "route": "/users/:user_id/measurements",
@@ -51,6 +51,20 @@
           "groups": "all",
           "route": "/users/:user_id/measurements/:id",
           "method": "get"
+        },
+        {
+          "description": "Creating a new user measurement",
+          "link": "measurement/creating_a_new_user_measurement.json",
+          "groups": "all",
+          "route": "/users/:user_id/measurements",
+          "method": "post"
+        },
+        {
+          "description": "Updating an specific user measurement",
+          "link": "measurement/updating_an_specific_user_measurement.json",
+          "groups": "all",
+          "route": "/users/:user_id/measurements/:id",
+          "method": "put"
         }
       ]
     }
