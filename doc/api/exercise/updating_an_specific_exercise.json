@@ -1,0 +1,61 @@
+{
+  "resource": "Exercise",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/exercises/:id",
+  "description": "Updating an specific exercise",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "name",
+      "description": "Exercise name"
+    },
+    {
+      "name": "user_id",
+      "description": "Admin User id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/exercises/1",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://tracker-api/exercises/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMTIxMjl9.-GcuuWLJCJzVyEw-cdJ3nSclzGzrlHeYBXZk7RiqZZA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "PUT",
+      "request_path": "/exercises/1",
+      "request_body": "{\"name\":\"Squats\",\"user_id\":\"1\"}",
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://tracker-api/exercises/1\" -d '{\"name\":\"Squats\",\"user_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMTIxMjl9.-GcuuWLJCJzVyEw-cdJ3nSclzGzrlHeYBXZk7RiqZZA\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

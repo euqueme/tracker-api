@@ -17,6 +17,20 @@
           "groups": "all",
           "route": "/exercises/:id",
           "method": "get"
+        },
+        {
+          "description": "Creating a new exercise",
+          "link": "exercise/creating_a_new_exercise.json",
+          "groups": "all",
+          "route": "/exercises",
+          "method": "post"
+        },
+        {
+          "description": "Updating an specific exercise",
+          "link": "exercise/updating_an_specific_exercise.json",
+          "groups": "all",
+          "route": "/exercises/:id",
+          "method": "put"
         }
       ]
     },
