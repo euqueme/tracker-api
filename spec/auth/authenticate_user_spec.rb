@@ -4,7 +4,7 @@ RSpec.describe AuthenticateUser do
   # create test user
   let(:user) { create(:user) }
   # valid request subject
-  subject(:valid_auth_obj) { described_class.new(user.email, user.password_digest) }
+  subject(:valid_auth_obj) { described_class.new(user.email, user.password.to_s) }
   # invalid request subject
   subject(:invalid_auth_obj) { described_class.new('foo', 'bar') }
 

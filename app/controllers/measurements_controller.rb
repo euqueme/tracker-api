@@ -1,31 +1,31 @@
 class MeasurementsController < ApplicationController
-    before_action :set_exercise
-    before_action :set_exercise_measurement, only: [:show, :update, :destroy]
-    before_action :check_current_user
+    before_action :set_user
+    before_action :set_user_measurement, only: [:show, :update, :destroy]
+    before_action :check_current_user, only: [:create, :update, :destroy]
   
-    # GET /exercises/:exercise_id/measurements
+    # GET /users/:user_id/measurements
     def index
-      json_response(@exercise.measurements)
+      json_response(@user.measurements)
     end
   
-    # GET /exercises/:exercise_id/measurements/:id
+    # GET /users/:user_id/measurements/:id
     def show
       json_response(@measurement)
     end
   
-    # POST /exercises/:exercise_id/measurements
+    # POST /users/:user_id/measurements
     def create
-      @exercise.measurements.create!(measurement_params)
-      json_response(@exercise.measurements.last, :created)
+      @user.measurements.create!(measurement_params)
+      json_response(@user.measurements.last, :created)
     end
   
-    # PUT /exercises/:exercise_id/measurements/:id
+    # PUT /users/:user_id/measurements/:id
     def update
       @measurement.update(measurement_params)
       head :no_content
     end
   
-    # DELETE /exercises/:exercise_id/measurements/:id
+    # DELETE /users/:user_id/measurements/:id
     def destroy
       @measurement.destroy
       head :no_content
@@ -37,12 +37,12 @@ class MeasurementsController < ApplicationController
       params.permit(:description, :amount, :exercise_id, :user_id)
     end
   
-    def set_exercise
-      @exercise = Exercise.find(params[:exercise_id])
+    def set_user
+      @user = User.find(params[:user_id])
     end
   
-    def set_exercise_measurement
-      @measurement = @exercise.measurements.find_by!(id: params[:id]) if @exercise
+    def set_user_measurement
+      @measurement = @user.measurements.find_by!(id: params[:id]) if @user
     end
 
     def check_current_user

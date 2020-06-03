@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
   # Association test
   # ensure User model has a 1:m relationship with the Exercise model
   it { should have_many(:exercises) }
+  it { should have_many(:measurements).dependent(:destroy) }
   # Validation tests
   # ensure columns name, email, password_digest and remember_digest are present before saving
   it { should validate_presence_of(:name) }
