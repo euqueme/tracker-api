@@ -19,6 +19,26 @@
           "method": "get"
         }
       ]
+    },
+    {
+      "name": "Measurement",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Listing Measurements",
+          "link": "measurement/listing_measurements.json",
+          "groups": "all",
+          "route": "/users/:user_id/measurements",
+          "method": "get"
+        },
+        {
+          "description": "Getting a specific measurement from the login user",
+          "link": "measurement/getting_a_specific_measurement_from_the_login_user.json",
+          "groups": "all",
+          "route": "/users/:user_id/measurements/:id",
+          "method": "get"
+        }
+      ]
     }
   ]
 }
