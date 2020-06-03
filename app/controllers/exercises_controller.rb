@@ -9,7 +9,7 @@ class ExercisesController < ApplicationController
   
     # POST /exercises
     def create
-      @exercise = Exercise.create!(exercise_params)
+      @exercise = current_user.exercises.create!(exercise_params)
       json_response(@exercise, :created)
     end
   
@@ -34,7 +34,7 @@ class ExercisesController < ApplicationController
   
     def exercise_params
       # whitelist params
-      params.permit(:name, :user_id)
+      params.permit(:name)
     end
   
     def set_exercise

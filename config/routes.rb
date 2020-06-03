@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :exercises do
     resources :measurements
   end
+
+  post 'auth/login', to: 'authentication#authenticate'
+  post 'signup', to: 'users#create'
 end
