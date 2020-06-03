@@ -1,5 +1,6 @@
 class ExercisesController < ApplicationController
     before_action :set_exercise, only: [:show, :update, :destroy]
+    before_action :check_admin, only: [:create, :update, :destroy]
 
     # GET /exercises
     def index
@@ -39,5 +40,9 @@ class ExercisesController < ApplicationController
   
     def set_exercise
       @exercise = Exercise.find(params[:id])
+    end
+
+    def check_admin
+      raise(ExceptionHandler::AuthenticationError, Message.notallowed) unless current_user.admin
     end
 end
