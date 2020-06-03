@@ -1,0 +1,24 @@
+{
+  "resources": [
+    {
+      "name": "Exercise",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Listing Exercises",
+          "link": "exercise/listing_exercises.json",
+          "groups": "all",
+          "route": "/exercises",
+          "method": "get"
+        },
+        {
+          "description": "Getting a specific exercise",
+          "link": "exercise/getting_a_specific_exercise.json",
+          "groups": "all",
+          "route": "/exercises/:id",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}
