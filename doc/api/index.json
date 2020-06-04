@@ -1,6 +1,26 @@
 {
   "resources": [
     {
+      "name": "Authentication",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "Creating a new  User",
+          "link": "authentication/creating_a_new_user.json",
+          "groups": "all",
+          "route": "/signup",
+          "method": "post"
+        },
+        {
+          "description": "Creating a new token",
+          "link": "authentication/creating_a_new_token.json",
+          "groups": "all",
+          "route": "/login",
+          "method": "post"
+        }
+      ]
+    },
+    {
       "name": "Exercise",
       "explanation": null,
       "examples": [
