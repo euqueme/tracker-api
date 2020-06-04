@@ -36,7 +36,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://tracker-api/exercises/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMTY4MjV9.8aGHWrl6K9JI7JgDi8u7KW6AmqdLHg2Z_xcIM6-a-XI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://exercise-tracker-api/exercises/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMjAzMTR9.SNBsVW2NaZxzfQrwWPG3rMs_FxDkRoH6v7mYQ_SWQRs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "PUT",
@@ -55,7 +55,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://tracker-api/exercises/1\" -d '{\"name\":\"Push-ups\",\"user_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMTY4MjV9.8aGHWrl6K9JI7JgDi8u7KW6AmqdLHg2Z_xcIM6-a-XI\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://exercise-tracker-api/exercises/1\" -d '{\"name\":\"Push-ups\",\"user_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMjAzMTR9.SNBsVW2NaZxzfQrwWPG3rMs_FxDkRoH6v7mYQ_SWQRs\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
