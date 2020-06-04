@@ -1,5 +1,4 @@
 class Measurement < ApplicationRecord
-
   # model association
   belongs_to :user
   belongs_to :exercise
@@ -7,5 +6,4 @@ class Measurement < ApplicationRecord
   # validation
   validates_presence_of :description
   validates_presence_of :amount
-
 end
