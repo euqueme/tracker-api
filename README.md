@@ -61,7 +61,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![asciicast][product-screenshot]](https://www.loom.com/)
+[![asciicast][product-screenshot]](https://www.loom.com/share/1fa671b5e0584f3f82b0c27e9640cc54)
 
 This is a tracker API, and has been given an individual theme to keep track of workout measurements of the login users, also only the administrator users can manage the exercises.
 
@@ -71,7 +71,7 @@ This is the final Capstone project of the Microverse Curriculum.
 
 Watch the walkthrough video to see how to use it in your computer
 
-https://www.loom.com/
+https://www.loom.com/share/1fa671b5e0584f3f82b0c27e9640cc54
 
 Now go to the [Documentation](https://extracker-api.herokuapp.com/api_docs/)
 
