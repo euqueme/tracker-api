@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[binary data]",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Energy Armor\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.519Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.519Z\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Omnipotence\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.521Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.521Z\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Energy Absorption\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.523Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.523Z\"\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Hypnokinesis\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.526Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.526Z\"\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Energy Manipulation\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.528Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.528Z\"\n  },\n  {\n    \"id\": 6,\n    \"name\": \"Durability\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.531Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.531Z\"\n  },\n  {\n    \"id\": 7,\n    \"name\": \"Time Travel\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.533Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.533Z\"\n  },\n  {\n    \"id\": 8,\n    \"name\": \"Animation\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.535Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.535Z\"\n  },\n  {\n    \"id\": 9,\n    \"name\": \"Power Sense\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.537Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.537Z\"\n  },\n  {\n    \"id\": 10,\n    \"name\": \"Projection\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-06-11T21:09:28.539Z\",\n    \"updated_at\": \"2020-06-11T21:09:28.539Z\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"http://extracker-api.herokuapp.com/exercises\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjF9.B_BkrqeIn48Y91p_bYp2xczhL3FRDhm3zMON7heCJVg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"http://extracker-api.herokuapp.com/exercises\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

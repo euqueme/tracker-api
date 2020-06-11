@@ -31,10 +31,8 @@ resource 'Exercise', acceptance: true do
     parameter :name, 'Exercise name'
     parameter :user_id, 'Admin User id'
 
-    request = { name: 'Squats',
-                user_id: '1' }
-
-    example_request 'Creating a new exercise', request do
+    example_request 'Creating a new exercise' do
+      do_request(name: 'Squats', user_id: user.id.to_s)
       expect(status).to eq(201)
     end
   end

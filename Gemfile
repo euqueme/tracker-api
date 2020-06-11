@@ -29,6 +29,7 @@ gem 'jwt'
 
 gem 'raddocs'
 gem 'rspec_api_documentation'
+gem 'rubocop-rspec', require: false
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
@@ -50,6 +51,7 @@ group :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'rubocop-faker'
 end
 
 group :production do

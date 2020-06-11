@@ -20,7 +20,7 @@ RSpec.describe 'Exercises API', type: :request do
     end
 
     it 'returns status code 200' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -35,7 +35,7 @@ RSpec.describe 'Exercises API', type: :request do
       end
 
       it 'returns status code 200' do
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
     end
 
@@ -43,7 +43,7 @@ RSpec.describe 'Exercises API', type: :request do
       let(:exercise_id) { 100 }
 
       it 'returns status code 404' do
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'returns a not found message' do
@@ -69,7 +69,7 @@ RSpec.describe 'Exercises API', type: :request do
       end
 
       it 'returns status code 201' do
-        expect(response).to have_http_status(201)
+        expect(response).to have_http_status(:created)
       end
     end
 
@@ -79,19 +79,20 @@ RSpec.describe 'Exercises API', type: :request do
       before { post '/exercises', params: valid_attributes, headers: headers }
 
       it 'returns status code 401' do
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(:unauthorized)
       end
     end
 
     context 'when the request is invalid' do
       let(:invalid_attributes) { { name: nil, user_id: user.id.to_s }.to_json }
+
       before do
         user.update(admin: true)
         post '/exercises', params: invalid_attributes, headers: headers
       end
 
       it 'returns status code 422' do
-        expect(response).to have_http_status(422)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
 
       it 'returns a validation failure message' do
@@ -116,7 +117,7 @@ RSpec.describe 'Exercises API', type: :request do
       end
 
       it 'returns status code 204' do
-        expect(response).to have_http_status(204)
+        expect(response).to have_http_status(:no_content)
       end
     end
   end
@@ -124,13 +125,14 @@ RSpec.describe 'Exercises API', type: :request do
   # Test suite for DELETE /exercises/:id
   describe 'DELETE /exercises/:id' do
     let(:valid_attributes) { { user_id: user.id.to_s }.to_json }
+
     before do
       user.update(admin: true)
       delete "/exercises/#{exercise_id}", params: valid_attributes, headers: headers
     end
 
     it 'returns status code 204' do
-      expect(response).to have_http_status(204)
+      expect(response).to have_http_status(:no_content)
     end
   end
 end

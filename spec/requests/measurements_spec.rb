@@ -16,7 +16,7 @@ RSpec.describe 'Measurements API' do
 
     context 'when user exists' do
       it 'returns status code 200' do
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
 
       it 'returns all users measurements' do
@@ -28,7 +28,7 @@ RSpec.describe 'Measurements API' do
       let(:user_id) { 0 }
 
       it 'returns status code 404' do
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'returns a not found message' do
@@ -43,7 +43,7 @@ RSpec.describe 'Measurements API' do
 
     context 'when user measurement exists' do
       it 'returns status code 200' do
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
 
       it 'returns the measurement' do
@@ -55,7 +55,7 @@ RSpec.describe 'Measurements API' do
       let(:id) { 0 }
 
       it 'returns status code 404' do
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'returns a not found message' do
@@ -72,7 +72,7 @@ RSpec.describe 'Measurements API' do
       before { post "/users/#{user_id}/measurements", params: valid_attributes, headers: headers }
 
       it 'returns status code 201' do
-        expect(response).to have_http_status(201)
+        expect(response).to have_http_status(:created)
       end
     end
 
@@ -80,7 +80,7 @@ RSpec.describe 'Measurements API' do
       before { post "/users/#{user_id}/measurements", params: {}, headers: headers }
 
       it 'returns status code 422' do
-        expect(response).to have_http_status(422)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
 
       it 'returns a failure message' do
@@ -97,7 +97,7 @@ RSpec.describe 'Measurements API' do
 
     context 'when measurement exists' do
       it 'returns status code 204' do
-        expect(response).to have_http_status(204)
+        expect(response).to have_http_status(:no_content)
       end
 
       it 'updates the measurement' do
@@ -110,7 +110,7 @@ RSpec.describe 'Measurements API' do
       let(:id) { 0 }
 
       it 'returns status code 404' do
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'returns a not found message' do
@@ -122,8 +122,9 @@ RSpec.describe 'Measurements API' do
   # Test suite for DELETE /users/:id
   describe 'DELETE /users/:id' do
     before { delete "/users/#{user_id}/measurements/#{id}", params: {}, headers: headers }
+
     it 'returns status code 204' do
-      expect(response).to have_http_status(204)
+      expect(response).to have_http_status(:no_content)
     end
   end
 end

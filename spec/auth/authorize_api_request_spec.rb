@@ -2,13 +2,16 @@ require 'rails_helper'
 
 RSpec.describe AuthorizeApiRequest do
   # Create test user
-  let(:user) { create(:user) }
-  # Mock `Authorization` header
-  let(:header) { { 'Authorization' => token_generator(user.id) } }
-  # Invalid request subject
   subject(:invalid_request_obj) { described_class.new({}) }
+
+  let(:request_obj) { described_class.new(header) }
+  let(:user) { create(:user) }
+  let(:header) { { 'Authorization' => token_generator(user.id) } }
+
+  # Mock `Authorization` header
+  # Invalid request subject
+
   # Valid request subject
-  subject(:request_obj) { described_class.new(header) }
 
   # Test Suite for AuthorizeApiRequest#call
   # This is our entry point into the service class
@@ -43,8 +46,9 @@ RSpec.describe AuthorizeApiRequest do
       end
 
       context 'when token is expired' do
-        let(:header) { { 'Authorization' => expired_token_generator(user.id) } }
         subject(:request_obj) { described_class.new(header) }
+
+        let(:header) { { 'Authorization' => expired_token_generator(user.id) } }
 
         it 'raises ExceptionHandler::ExpiredSignature error' do
           expect { request_obj.call }
@@ -55,9 +59,10 @@ RSpec.describe AuthorizeApiRequest do
         end
       end
 
-      context 'fake token' do
-        let(:header) { { 'Authorization' => 'foobar' } }
+      context 'when fake token' do
         subject(:invalid_request_obj) { described_class.new(header) }
+
+        let(:header) { { 'Authorization' => 'foobar' } }
 
         it 'handles JWT::DecodeError' do
           expect { invalid_request_obj.call }

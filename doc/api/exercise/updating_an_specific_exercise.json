@@ -36,7 +36,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://extracker-api.herokuapp.com/exercises/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/exercises/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "PUT",
@@ -55,7 +55,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://extracker-api.herokuapp.com/exercises/1\" -d '{\"name\":\"Push-ups\",\"user_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/exercises/1\" -d '{\"name\":\"Push-ups\",\"user_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }
