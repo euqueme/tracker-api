@@ -1,6 +1,6 @@
 {
   "resource": "Exercise",
-  "resource_explanation": null,
+  "resource_explanation": "Shows an specific exercise no authentication is needed",
   "http_method": "GET",
   "route": "/exercises/:id",
   "description": "Getting a specific exercise",
@@ -25,7 +25,7 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1,\n  \"name\": \"Power Cosmic\",\n  \"user_id\": 1,\n  \"created_at\": \"2020-06-11T21:09:28.557Z\",\n  \"updated_at\": \"2020-06-11T21:09:28.557Z\"\n}",
+      "response_body": "{\n  \"id\": 1,\n  \"name\": \"Chronokinesis\",\n  \"user_id\": 1,\n  \"created_at\": \"2020-06-11T22:25:06.078Z\",\n  \"updated_at\": \"2020-06-11T22:25:06.078Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

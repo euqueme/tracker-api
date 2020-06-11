@@ -21,13 +21,14 @@ resource 'Measurement', acceptance: true do
     let(:user_id) { user.id }
     let(:id) { measurements.first.id }
     example_request 'Getting a specific measurement from the login user' do
+      explanation 'Shows a specific measurement from the login user'
       expect(status).to eq(200)
     end
   end
 
   post '/users/:user_id/measurements' do
     route_summary 'This is used to create user measurements.'
-
+    explanation 'Registers a new measurement from the login user'
     let(:user_id) { user.id }
 
     parameter :description, 'Measurement description'
@@ -43,6 +44,7 @@ resource 'Measurement', acceptance: true do
 
   put '/users/:user_id/measurements/:id' do
     route_summary 'This is used to update user measurements.'
+    explanation 'Edits a measurement from the login user'
     let(:user_id) { user.id }
     let(:id) { measurements.first.id }
 

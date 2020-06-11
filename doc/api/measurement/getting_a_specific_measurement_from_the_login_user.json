@@ -4,7 +4,7 @@
   "http_method": "GET",
   "route": "/users/:user_id/measurements/:id",
   "description": "Getting a specific measurement from the login user",
-  "explanation": null,
+  "explanation": "Shows a specific measurement from the login user",
   "parameters": [
 
   ],
@@ -25,7 +25,7 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1,\n  \"description\": \"[\\\"aut\\\", \\\"ullam\\\", \\\"sunt\\\"]\",\n  \"amount\": 2029063521,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-06-11T21:09:28.784Z\",\n  \"updated_at\": \"2020-06-11T21:09:28.784Z\"\n}",
+      "response_body": "{\n  \"id\": 1,\n  \"description\": \"enim\",\n  \"amount\": 45,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-06-11T22:25:06.299Z\",\n  \"updated_at\": \"2020-06-11T22:25:06.299Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

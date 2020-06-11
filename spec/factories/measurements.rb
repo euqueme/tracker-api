@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :measurement do
-    description { Faker::Lorem.words }
-    amount { Faker::Number.number(digits: 10) }
+    description { Faker::Lorem.word }
+    amount { Faker::Number.number(digits: 2) }
     user_id { nil }
     exercise_id { nil }
   end

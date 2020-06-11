@@ -8,6 +8,7 @@ resource 'Authentication', acceptance: true do
 
   post '/signup' do
     route_summary 'This is used to create users.'
+    explanation 'Registers a new user in the database'
 
     parameter :name, 'User name'
     parameter :email, 'User email'
@@ -22,6 +23,7 @@ resource 'Authentication', acceptance: true do
 
   post '/login' do
     route_summary 'This is used to login users.'
+    explanation 'Logs in a registered user.'
 
     parameter :email, 'User email'
     parameter :password, 'User password'

@@ -11,13 +11,14 @@ resource 'Exercise', acceptance: true do
 
   get '/exercises' do
     example_request 'Listing exercises' do
-      explanation 'List all the exercises in the system'
+      explanation 'List all the exercises in the system no authentication is needed'
       expect(status).to eq 200
     end
   end
 
   get '/exercises/:id' do
     route_summary 'This is used to display info from an specific exercise.'
+    explanation 'Shows an specific exercise no authentication is needed'
 
     let(:id) { exercises.first.id }
     example_request 'Getting a specific exercise' do
@@ -27,6 +28,7 @@ resource 'Exercise', acceptance: true do
 
   post '/exercises' do
     route_summary 'This is used to create exercises.'
+    explanation 'Creates a new exercise requires an admin user to be logged in'
 
     parameter :name, 'Exercise name'
     parameter :user_id, 'Admin User id'
@@ -39,6 +41,7 @@ resource 'Exercise', acceptance: true do
 
   put '/exercises/:id' do
     route_summary 'This is used to update exercises.'
+    explanation 'Updates a new exercise requires an admin user to be logged in'
     let(:id) { exercises.first.id }
 
     parameter :name, 'Exercise name'

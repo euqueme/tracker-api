@@ -1,6 +1,6 @@
 {
   "resource": "Exercise",
-  "resource_explanation": null,
+  "resource_explanation": "Updates a new exercise requires an admin user to be logged in",
   "http_method": "PUT",
   "route": "/exercises/:id",
   "description": "Updating an specific exercise",
