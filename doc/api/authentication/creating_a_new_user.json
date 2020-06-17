@@ -1,10 +1,10 @@
 {
   "resource": "Authentication",
-  "resource_explanation": "Registers a new user in the database",
+  "resource_explanation": null,
   "http_method": "POST",
   "route": "/signup",
   "description": "Creating a new  User",
-  "explanation": null,
+  "explanation": "Registers a new user in the database",
   "parameters": [
     {
       "name": "name",
@@ -60,7 +60,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTIwMDA3MDV9.oMos386lvhQgrudG_-DpSXmk9HvMUT8snyiR1tOWwmo\"\n}",
+      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTIwODc4NzZ9.ob0YNgDMfV6DImUyU8pi1OSXdl3OzCElHOAFq2Xil_g\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

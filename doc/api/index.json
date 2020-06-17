@@ -2,7 +2,7 @@
   "resources": [
     {
       "name": "Authentication",
-      "explanation": "Registers a new user in the database",
+      "explanation": null,
       "examples": [
         {
           "description": "Creating a new  User",

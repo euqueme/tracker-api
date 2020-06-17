@@ -1,10 +1,10 @@
 {
   "resource": "Measurement",
-  "resource_explanation": "Registers a new measurement from the login user",
+  "resource_explanation": null,
   "http_method": "POST",
   "route": "/users/:user_id/measurements",
   "description": "Creating a new user measurement",
-  "explanation": null,
+  "explanation": "Registers a new measurement from the login user",
   "parameters": [
     {
       "name": "description",
@@ -60,7 +60,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"id\": 21,\n  \"description\": \"Repetitions\",\n  \"amount\": 12,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-06-11T22:25:06.452Z\",\n  \"updated_at\": \"2020-06-11T22:25:06.452Z\"\n}",
+      "response_body": "{\n  \"id\": 21,\n  \"description\": \"Repetitions\",\n  \"amount\": 12,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-06-12T22:37:56.871Z\",\n  \"updated_at\": \"2020-06-12T22:37:56.871Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

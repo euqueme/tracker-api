@@ -60,7 +60,7 @@ RSpec.describe 'Exercises API', type: :request do
 
     context 'when the request is valid' do
       before do
-        user.update(admin: true)
+        user.to_admin
         post '/exercises', params: valid_attributes, headers: headers
       end
 
@@ -87,7 +87,7 @@ RSpec.describe 'Exercises API', type: :request do
       let(:invalid_attributes) { { name: nil, user_id: user.id.to_s }.to_json }
 
       before do
-        user.update(admin: true)
+        user.to_admin
         post '/exercises', params: invalid_attributes, headers: headers
       end
 
@@ -108,7 +108,7 @@ RSpec.describe 'Exercises API', type: :request do
 
     context 'when the record exists' do
       before do
-        user.update(admin: true)
+        user.to_admin
         put "/exercises/#{exercise_id}", params: valid_attributes, headers: headers
       end
 
@@ -127,7 +127,7 @@ RSpec.describe 'Exercises API', type: :request do
     let(:valid_attributes) { { user_id: user.id.to_s }.to_json }
 
     before do
-      user.update(admin: true)
+      user.to_admin
       delete "/exercises/#{exercise_id}", params: valid_attributes, headers: headers
     end
 

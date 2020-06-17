@@ -31,6 +31,8 @@ gem 'raddocs'
 gem 'rspec_api_documentation'
 gem 'rubocop-rspec', require: false
 
+gem 'rswag'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'

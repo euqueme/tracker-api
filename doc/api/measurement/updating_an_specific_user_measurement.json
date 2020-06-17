@@ -1,10 +1,10 @@
 {
   "resource": "Measurement",
-  "resource_explanation": "Edits a measurement from the login user",
+  "resource_explanation": null,
   "http_method": "PUT",
   "route": "/users/:user_id/measurements/:id",
   "description": "Updating an specific user measurement",
-  "explanation": null,
+  "explanation": "Edits a measurement from the login user",
   "parameters": [
     {
       "name": "description",

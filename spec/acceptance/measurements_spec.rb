@@ -27,8 +27,7 @@ resource 'Measurement', acceptance: true do
   end
 
   post '/users/:user_id/measurements' do
-    route_summary 'This is used to create user measurements.'
-    explanation 'Registers a new measurement from the login user'
+    route_summary 'This is used to create user measurements.' 
     let(:user_id) { user.id }
 
     parameter :description, 'Measurement description'
@@ -37,6 +36,7 @@ resource 'Measurement', acceptance: true do
     parameter :exercise_id, 'Exercise done by the user'
 
     example_request 'Creating a new user measurement' do
+      explanation 'Registers a new measurement from the login user'
       do_request(description: 'Repetitions', amount: '12', user_id: user.id.to_s, exercise_id: exercise.id.to_s)
       expect(status).to eq(201)
     end
@@ -44,7 +44,6 @@ resource 'Measurement', acceptance: true do
 
   put '/users/:user_id/measurements/:id' do
     route_summary 'This is used to update user measurements.'
-    explanation 'Edits a measurement from the login user'
     let(:user_id) { user.id }
     let(:id) { measurements.first.id }
 
@@ -54,6 +53,7 @@ resource 'Measurement', acceptance: true do
     parameter :exercise_id, 'Exercise done by the user'
 
     example_request 'Updating an specific user measurement' do
+      explanation 'Edits a measurement from the login user'
       do_request(description: 'Seconds', amount: '60', user_id: user.id.to_s, exercise_id: exercise.id.to_s)
       expect(status).to eq(204)
     end

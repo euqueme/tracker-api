@@ -1,10 +1,10 @@
 {
   "resource": "Exercise",
-  "resource_explanation": "Creates a new exercise requires an admin user to be logged in",
+  "resource_explanation": null,
   "http_method": "POST",
   "route": "/exercises",
   "description": "Creating a new exercise",
-  "explanation": null,
+  "explanation": "Creates a new exercise requires an admin user to be logged in",
   "parameters": [
     {
       "name": "name",
@@ -52,7 +52,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"id\": 11,\n  \"name\": \"Squats\",\n  \"user_id\": 1,\n  \"created_at\": \"2020-06-11T22:25:06.150Z\",\n  \"updated_at\": \"2020-06-11T22:25:06.150Z\"\n}",
+      "response_body": "{\n  \"id\": 11,\n  \"name\": \"Squats\",\n  \"user_id\": 1,\n  \"created_at\": \"2020-06-12T22:37:56.573Z\",\n  \"updated_at\": \"2020-06-12T22:37:56.573Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
