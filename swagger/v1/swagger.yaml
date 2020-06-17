@@ -1,0 +1,43 @@
+---
+openapi: 3.0.1
+info:
+  title: Exercise tracker API
+  version: v1
+paths:
+  "/signup":
+    post:
+      summary: Creates an user
+      tags:
+      - Signup
+      parameters: []
+      responses:
+        '201':
+          description: New User registered in the database
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                password_confirmation:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+              - password_confirmation
+servers:
+- url: http://localhost:3000
+  variables:
+    defaultHost:
+      default: http://localhost:3000
