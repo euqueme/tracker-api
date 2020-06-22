@@ -1,29 +1,7 @@
 require 'swagger_helper'
 
 describe 'Authentication API' do
-  # let!(:user) { create(:user) }
-  # before do
-  #   header 'Content-Type', 'application/json'
-  # end
-
-  # post '/signup' do
-  #   route_summary 'This is used to create users.'
-    
-  #   parameter :name, 'User name'
-  #   parameter :email, 'User email'
-  #   parameter :password, 'User password'
-  #   parameter :password_confirmation, 'User password confirmation'
-
-  #   example_request 'Creating a new  User' do
-  #     explanation 'Registers a new user in the database'
-  #     do_request(name: 'Maru', email: 'euqueme@gmail.com', password: 'foobar', password_confirmation: 'foobar')
-  #     expect(status).to eq(201)
-  #   end
-  # end
-
-
   path '/signup' do
-
     post 'Creates an user' do
       tags 'Signup'
       consumes 'application/json'
@@ -50,16 +28,27 @@ describe 'Authentication API' do
     end
   end
 
-  # post '/login' do
-  #   route_summary 'This is used to login users.'
-    
-  #   parameter :email, 'User email'
-  #   parameter :password, 'User password'
+  path '/login' do
+    post 'Used to login users' do
+      tags 'Login'
+      consumes 'application/json'
 
-  #   example_request 'Creating a new token' do
-  #     explanation 'Logs in a registered user.'
-  #     do_request(email: user.email, password: user.password)
-  #     expect(status).to eq(200)
-  #   end
-  # end
+      parameter name: :user, in: :body, schema: {
+        type: :object,
+        properties: {
+          email: { type: :string },
+          password: { type: :string }
+        },
+        required: [ 'email', 'password' ]
+      }
+      
+      response '200', 'Logs in an user and creates a new token' do
+        run_test!
+      end
+
+      response '401', 'invalid credentials' do
+        run_test!
+      end
+    end
+  end
 end

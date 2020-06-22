@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'signup', to: 'users#create'
 
   mount Raddocs::App => "/api_docs"
+  mount GrapeSwaggerRails::Engine => '/swagger'
 end
 
 

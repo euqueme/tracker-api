@@ -36,6 +36,59 @@ paths:
               - email
               - password
               - password_confirmation
+  "/login":
+    post:
+      summary: Used to login users
+      tags:
+      - Login
+      parameters: []
+      responses:
+        '200':
+          description: Logs in an user and creates a new token
+          content: {}
+        '401':
+          description: invalid credentials
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/exercises":
+    get:
+      summary: List all exercises
+      tags:
+      - Exercise
+      responses:
+        '200':
+          description: Shows all exercises no authentication is needed
+          content: {}
+  "/exercises/{id}":
+    get:
+      summary: List an specific exercise
+      tags:
+      - Exercise
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Shows an specific exercise no authentication is needed
+          content: {}
+        '401':
+          description: invalid credentials
+          content: {}
 servers:
 - url: http://localhost:3000
   variables:

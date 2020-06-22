@@ -33,6 +33,8 @@ gem 'rubocop-rspec', require: false
 
 gem 'rswag'
 
+gem 'grape-swagger-rails'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
