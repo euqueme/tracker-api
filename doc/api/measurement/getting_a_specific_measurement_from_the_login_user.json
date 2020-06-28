@@ -2,7 +2,7 @@
   "resource": "Measurement",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/users/:user_id/measurements/:id",
+  "route": "/v1/users/:user_id/measurements/:id",
   "description": "Getting a specific measurement from the login user",
   "explanation": "Shows a specific measurement from the login user",
   "parameters": [
@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/users/1/measurements/1",
+      "request_path": "/v1/users/1/measurements/1",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"id\": 1,\n  \"description\": \"eius\",\n  \"amount\": 64,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-06-12T22:37:56.721Z\",\n  \"updated_at\": \"2020-06-12T22:37:56.721Z\"\n}",
+      "response_body": "{\n  \"id\": 1,\n  \"description\": \"rerum\",\n  \"amount\": 27,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-06-28T20:07:40.665Z\",\n  \"updated_at\": \"2020-06-28T20:07:40.665Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"http://extracker-api.herokuapp.com/users/1/measurements/1\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"http://extracker-api.herokuapp.com/v1/users/1/measurements/1\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

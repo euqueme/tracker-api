@@ -9,14 +9,14 @@ resource 'Exercise', acceptance: true do
     user.to_admin
   end
 
-  get '/exercises' do
+  get '/v1/exercises' do
     example_request 'Listing exercises' do
       explanation 'List all the exercises in the system no authentication is needed'
       expect(status).to eq 200
     end
   end
 
-  get '/exercises/:id' do
+  get '/v1/exercises/:id' do
     route_summary 'This is used to display info from an specific exercise.'
 
     let(:id) { exercises.first.id }
@@ -26,7 +26,7 @@ resource 'Exercise', acceptance: true do
     end
   end
 
-  post '/exercises' do
+  post '/v1/exercises' do
     route_summary 'This is used to create exercises.'
 
     parameter :name, 'Exercise name'
@@ -39,7 +39,7 @@ resource 'Exercise', acceptance: true do
     end
   end
 
-  put '/exercises/:id' do
+  put '/v1/exercises/:id' do
     route_summary 'This is used to update exercises.'
     let(:id) { exercises.first.id }
 

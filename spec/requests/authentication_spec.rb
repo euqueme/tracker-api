@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Authentication', type: :request do
   # Authentication test suite
-  describe 'POST /login' do
+  describe 'POST /v1/login' do
     # create test user
     let!(:user) { create(:user) }
     # set headers for authorization
@@ -26,7 +26,7 @@ RSpec.describe 'Authentication', type: :request do
 
     # returns auth token when request is valid
     context 'When request is valid' do
-      before { post '/login', params: valid_credentials, headers: headers }
+      before { post '/v1/login', params: valid_credentials, headers: headers }
 
       it 'returns an authentication token' do
         expect(json['auth_token']).not_to be_nil
@@ -35,7 +35,7 @@ RSpec.describe 'Authentication', type: :request do
 
     # returns failure message when request is invalid
     context 'When request is invalid' do
-      before { post '/login', params: invalid_credentials, headers: headers }
+      before { post '/v1/login', params: invalid_credentials, headers: headers }
 
       it 'returns a failure message' do
         expect(json['message']).to match(/Invalid credentials/)

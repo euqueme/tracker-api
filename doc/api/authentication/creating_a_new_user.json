@@ -2,7 +2,7 @@
   "resource": "Authentication",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/signup",
+  "route": "/v1/signup",
   "description": "Creating a new  User",
   "explanation": "Registers a new user in the database",
   "parameters": [
@@ -29,7 +29,7 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/signup",
+      "request_path": "/v1/signup",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -45,11 +45,11 @@
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/signup\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/signup\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "POST",
-      "request_path": "/signup",
+      "request_path": "/v1/signup",
       "request_body": "{\"name\":\"Maru\",\"email\":\"euqueme@gmail.com\",\"password\":\"foobar\",\"password_confirmation\":\"foobar\"}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -60,12 +60,12 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTIwODc4NzZ9.ob0YNgDMfV6DImUyU8pi1OSXdl3OzCElHOAFq2Xil_g\"\n}",
+      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTM0NjEyNjB9.jYQKk0r5XT5Sl-peTgMOq4q3_-V-MdSfgobAWAlsyMw\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/signup\" -d '{\"name\":\"Maru\",\"email\":\"euqueme@gmail.com\",\"password\":\"foobar\",\"password_confirmation\":\"foobar\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/signup\" -d '{\"name\":\"Maru\",\"email\":\"euqueme@gmail.com\",\"password\":\"foobar\",\"password_confirmation\":\"foobar\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -4,7 +4,7 @@ info:
   title: Exercise tracker API
   version: v1
 paths:
-  "/signup":
+  "/v1/signup":
     post:
       summary: Creates an user
       tags:
@@ -29,14 +29,14 @@ paths:
                   type: string
                 password:
                   type: string
-                password_confirmation:
+                password_digest:
                   type: string
               required:
               - name
               - email
               - password
-              - password_confirmation
-  "/login":
+              - password_digest
+  "/v1/login":
     post:
       summary: Used to login users
       tags:
@@ -62,7 +62,7 @@ paths:
               required:
               - email
               - password
-  "/exercises":
+  "/v1/exercises":
     get:
       summary: List all exercises
       tags:
@@ -71,7 +71,7 @@ paths:
         '200':
           description: Shows all exercises no authentication is needed
           content: {}
-  "/exercises/{id}":
+  "/v1/exercises/{id}":
     get:
       summary: List an specific exercise
       tags:

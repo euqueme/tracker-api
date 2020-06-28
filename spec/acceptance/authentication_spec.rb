@@ -6,7 +6,7 @@ resource 'Authentication', acceptance: true do
     header 'Content-Type', 'application/json'
   end
 
-  post '/signup' do
+  post '/v1/signup' do
     route_summary 'This is used to create users.'
     
     parameter :name, 'User name'
@@ -21,7 +21,7 @@ resource 'Authentication', acceptance: true do
     end
   end
 
-  post '/login' do
+  post '/v1/login' do
     route_summary 'This is used to login users.'
     
     parameter :email, 'User email'

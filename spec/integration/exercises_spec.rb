@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
 describe 'Exercise' do
-  path '/exercises' do
+  path '/v1/exercises' do
     get 'List all exercises' do
       tags 'Exercise'
       consumes 'application/json'
@@ -17,13 +17,13 @@ describe 'Exercise' do
         },
         required: [ 'id', 'name' ]
 
-        let!(:exercises) { create_list(:exercise, 10) }
+        let(:exercises) { create_list(:exercise, 10) }
         run_test!
       end
     end
   end
 
-  path '/exercises/{id}' do
+  path '/v1/exercises/{id}' do
     get 'List an specific exercise' do
       tags 'Exercise'
       consumes 'application/json'

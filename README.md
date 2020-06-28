@@ -215,14 +215,21 @@ $ http :3000/users/2/measurements/1 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2Vy
 to run the test cases do:
 
 ```
-rspec --format documentation
+rspec spec/ --exclude-pattern integration/*
 ```
 
-to update the documentation run:
+to update the raddocs documentation run:
 
 ```
 rake docs:generate
 ```
+
+to update the swagger documentation run:
+
+```
+rake rswag:specs:swaggerize
+```
+
 and go to localhost:3000/api_docs with your browser 
 
 ### Deployment

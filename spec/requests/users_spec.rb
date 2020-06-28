@@ -5,11 +5,11 @@ RSpec.describe 'Users API', type: :request do
   let(:headers) { valid_headers.except('Authorization') }
 
   # User signup test suite
-  describe 'POST /signup' do
+  describe 'POST /v1/signup' do
     let(:valid_attributes) { { name: 'Maruk', email: 'maru@email.com', password: '123456' }.to_json }
 
     context 'when valid request' do
-      before { post '/signup', params: valid_attributes, headers: headers }
+      before { post '/v1/signup', params: valid_attributes, headers: headers }
 
       it 'creates a new user' do
         expect(response).to have_http_status(:created)
@@ -25,7 +25,7 @@ RSpec.describe 'Users API', type: :request do
     end
 
     context 'when invalid request' do
-      before { post '/signup', params: {}, headers: headers }
+      before { post '/v1/signup', params: {}, headers: headers }
 
       it 'does not create a new user' do
         expect(response).to have_http_status(:unprocessable_entity)
