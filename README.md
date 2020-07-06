@@ -113,7 +113,7 @@ Install the HTTP client of your preference to use it, I used [httpie](https://ht
 The following command will create an login a new user in the database
 
 ```bash
-$ http :3000/signup name=maru email=maru@email.com password=foobar password_confirmation=foobar
+$ http :3000/v1/signup name=maru email=maru@email.com password=foobar password_confirmation=foobar
 ```
 
 ![screenshot](app/assets/images/signup.png)
@@ -123,7 +123,7 @@ $ http :3000/signup name=maru email=maru@email.com password=foobar password_conf
 Users Log in with their email and password
 
 ```bash
-$ http :3000/login email=maru@email.com password=foobar
+$ http :3000/v1/login email=maru@email.com password=foobar
 ```
 
 ![screenshot](app/assets/images/login.png)
