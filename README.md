@@ -73,7 +73,7 @@ Watch the walkthrough video to see how to use it in your computer
 
 https://www.loom.com/share/1fa671b5e0584f3f82b0c27e9640cc54
 
-Now go to the [Documentation](https://extracker-api.herokuapp.com/api_docs/)
+The documentation was built using raddocs and swagger
 
 ### Getting Started
 
@@ -230,11 +230,13 @@ to update the swagger documentation run:
 rake rswag:specs:swaggerize
 ```
 
-and go to localhost:3000/api_docs with your browser 
+- and go to localhost:3000/api_docs with your browser to get to the raddocs documentation
+- or go to localhost:300/api-docs with your browser to get to the swagger documentation
 
 ### Deployment
 
-The project documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api_docs/) 
+- The project raddocs documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api_docs/) 
+- The project swagger documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api-docs/) 
 
 ### Built With
 This project was built using these technologies.
@@ -243,6 +245,7 @@ This project was built using these technologies.
 * Rspec
 * rspec_api_documentation
 * raddocs
+* swagger
 * Rubocop
 * Ubuntu 18.4+
 * Stickler
@@ -272,6 +275,8 @@ Give a ⭐️ if you like this project!
 * [The Best readme Template](https://github.com/othneildrew/Best-README-Template)
 * [Austin Kabiru](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one)
 * [A D Vishnu Prasad](https://advishnuprasad.com/blog/2016/02/07/api-docs-using-rspecs/)
+* [How to document REST APIs with Swagger and Ruby on Rails](https://medium.com/@sushildamdhere/how-to-document-rest-apis-with-swagger-and-ruby-on-rails-ae4e13177f5d)
+* [Versioning a Rails API](https://chriskottom.com/blog/2017/04/versioning-a-rails-api/)
 
 
 <!-- LICENSE -->
