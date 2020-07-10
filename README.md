@@ -73,7 +73,7 @@ Watch the walkthrough video to see how to use it in your computer
 
 https://www.loom.com/share/1fa671b5e0584f3f82b0c27e9640cc54
 
-Now go to the [Documentation](https://extracker-api.herokuapp.com/api_docs/)
+The documentation was built using raddocs and swagger
 
 ### Getting Started
 
@@ -113,7 +113,7 @@ Install the HTTP client of your preference to use it, I used [httpie](https://ht
 The following command will create an login a new user in the database
 
 ```bash
-$ http :3000/signup name=maru email=maru@email.com password=foobar password_confirmation=foobar
+$ http :3000/v1/v1/signup name=maru email=maru@email.com password=foobar password_confirmation=foobar
 ```
 
 ![screenshot](app/assets/images/signup.png)
@@ -123,7 +123,7 @@ $ http :3000/signup name=maru email=maru@email.com password=foobar password_conf
 Users Log in with their email and password
 
 ```bash
-$ http :3000/login email=maru@email.com password=foobar
+$ http :3000/v1/login email=maru@email.com password=foobar
 ```
 
 ![screenshot](app/assets/images/login.png)
@@ -144,14 +144,14 @@ $ rails c
 After that you have to first login the user and copy the auth_token somewhere
 
 ```bash
-$ http :3000/login email=maru@email.com password=foobar
+$ http :3000/v1/login email=maru@email.com password=foobar
 ```
 ![screenshot](app/assets/images/login-admin.png)
 
 Finally we'll create a new exercise this way (paste the auth_token in the Authorization header)
 
 ```bash
-$ http :3000/exercises name=Squats user_id=1 \
+$ http :3000/v1/exercises name=Squats user_id=1 \
 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMzMzOTl9.XLb1MX7E4293U6GzUi_lFxxBmAMcAZpcmapO7h8X92E'
 ```
 ![screenshot](app/assets/images/exercise-c.png)
@@ -161,7 +161,7 @@ Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTEzMzMzOTl9.XLb
 To see all the exercises created in the database you don't need to be logged in just type the following command
 
 ```bash
-$ http :3000/exercises
+$ http :3000/v1/exercises
 ```
 ![screenshot](app/assets/images/exercises-index.png)
 
@@ -170,7 +170,7 @@ $ http :3000/exercises
 No authentication is needed to see an specific exercise
 
 ```bash
-$ http :3000/exercises/2
+$ http :3000/v1/exercises/2
 ```
 
 ![screenshot](app/assets/images/exercise-show.png)
@@ -181,14 +181,15 @@ To create a measurement an user has to be logged in and that user can only creat
 
 Login the user (admin or not) and copy the auth_token somewhere
 ```bash
-$ http :3000/login email=audrey@email.com password=123456
+$ http :3000/v1/login email=audrey@email.com password=foobar
 ```
 ![screenshot](app/assets/images/measure-login.png)
 
 Now we'll paste it in the Authentication header for creating measurement
 
 ```bash
-$ http :3000/users/2/measurements description=Repetitions amount=10 exercise_id=1 \ Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTEzMzQ5MDJ9.fUepRH8o6Me08UUhK5ZlRIGGkUDssBTUvDE4a2dD7TE'
+$ http :3000/v1/users/2/measurements description=Repetitions amount=10 exercise_id=1 \
+Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ0OTE0Nzd9.QkhAKA-Oft6reyvCw5tGHgLkD6bRDpsWb_iKX8tef6s'
 ```
 ![screenshot](app/assets/images/measure-c.png)
 
@@ -197,7 +198,7 @@ $ http :3000/users/2/measurements description=Repetitions amount=10 exercise_id=
 To see all the measurements a user must be logged in and its only possible to see the measurements created by the logged in user, we'll use the same authentication as the step before
 
 ```bash
-$ http :3000/users/2/measurements Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTEzMzQ5MDJ9.fUepRH8o6Me08UUhK5ZlRIGGkUDssBTUvDE4a2dD7TE'
+$ http :3000/v1/users/2/measurements Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ0OTE0Nzd9.QkhAKA-Oft6reyvCw5tGHgLkD6bRDpsWb_iKX8tef6s'
 ```
 ![screenshot](app/assets/images/measure-all.png)
 
@@ -206,7 +207,7 @@ $ http :3000/users/2/measurements Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2
 Same as the step before only difference is we have to specify the measurement id just like we did in the Exercise one
 
 ```bash
-$ http :3000/users/2/measurements/1 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTEzMzQ5MDJ9.fUepRH8o6Me08UUhK5ZlRIGGkUDssBTUvDE4a2dD7TE'
+$ http :3000/v1/users/2/measurements/1 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ0OTE0Nzd9.QkhAKA-Oft6reyvCw5tGHgLkD6bRDpsWb_iKX8tef6s'
 ```
 ![screenshot](app/assets/images/measure-show.png)
 
@@ -215,19 +216,28 @@ $ http :3000/users/2/measurements/1 Authorization:'eyJhbGciOiJIUzI1NiJ9.eyJ1c2Vy
 to run the test cases do:
 
 ```
-rspec --format documentation
+rspec spec/ --exclude-pattern integration/*
 ```
 
-to update the documentation run:
+to update the raddocs documentation run:
 
 ```
 rake docs:generate
 ```
-and go to localhost:3000/api_docs with your browser 
+
+to update the swagger documentation run:
+
+```
+rake rswag:specs:swaggerize
+```
+
+- and go to localhost:3000/api_docs with your browser to get to the raddocs documentation
+- or go to localhost:3000/api-docs with your browser to get to the swagger documentation
 
 ### Deployment
 
-The project documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api_docs/) 
+- The project raddocs documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api_docs/) 
+- The project swagger documentation was deployed in [Heroku](https://extracker-api.herokuapp.com/api-docs/) 
 
 ### Built With
 This project was built using these technologies.
@@ -236,6 +246,7 @@ This project was built using these technologies.
 * Rspec
 * rspec_api_documentation
 * raddocs
+* swagger
 * Rubocop
 * Ubuntu 18.4+
 * Stickler
@@ -265,6 +276,8 @@ Give a ⭐️ if you like this project!
 * [The Best readme Template](https://github.com/othneildrew/Best-README-Template)
 * [Austin Kabiru](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one)
 * [A D Vishnu Prasad](https://advishnuprasad.com/blog/2016/02/07/api-docs-using-rspecs/)
+* [How to document REST APIs with Swagger and Ruby on Rails](https://medium.com/@sushildamdhere/how-to-document-rest-apis-with-swagger-and-ruby-on-rails-ae4e13177f5d)
+* [Versioning a Rails API](https://chriskottom.com/blog/2017/04/versioning-a-rails-api/)
 
 
 <!-- LICENSE -->
