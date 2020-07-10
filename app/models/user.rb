@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :email, format: { with: VALID_EMAIL_REGEX }
 
   def to_admin
-    self.update(admin: true)
+    update(admin: true)
   end
 
 end
