@@ -2,9 +2,9 @@
   "resource": "Exercise",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/exercises",
+  "route": "/v1/exercises",
   "description": "Creating a new exercise",
-  "explanation": null,
+  "explanation": "Creates a new exercise requires an admin user to be logged in",
   "parameters": [
     {
       "name": "name",
@@ -21,7 +21,27 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/exercises",
+      "request_path": "/v1/exercises",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Host": "example.org"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"message\": \"Validation failed: Name can't be blank\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/exercises\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "POST",
+      "request_path": "/v1/exercises",
       "request_body": "{\"name\":\"Squats\",\"user_id\":\"1\"}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -32,12 +52,12 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"id\": 11,\n  \"name\": \"Squats\",\n  \"user_id\": 1,\n  \"created_at\": \"2020-07-13T04:35:00.170Z\",\n  \"updated_at\": \"2020-07-13T04:35:00.170Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/exercises\" -d '{\"name\":\"Squats\",\"user_id\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/exercises\" -d '{\"name\":\"Squats\",\"user_id\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

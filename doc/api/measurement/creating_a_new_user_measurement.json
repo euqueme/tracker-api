@@ -2,9 +2,9 @@
   "resource": "Measurement",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/users/:user_id/measurements",
+  "route": "/v1/users/:user_id/measurements",
   "description": "Creating a new user measurement",
-  "explanation": null,
+  "explanation": "Registers a new measurement from the login user",
   "parameters": [
     {
       "name": "description",
@@ -29,7 +29,7 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/users/1/measurements",
+      "request_path": "/v1/users/1/measurements",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -40,16 +40,16 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"message\": \"Validation failed: Exercise must exist, Description can't be blank, Amount can't be blank\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/users/1/measurements\" -d '' -X POST \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/users/1/measurements\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "POST",
-      "request_path": "/users/1/measurements",
+      "request_path": "/v1/users/1/measurements",
       "request_body": "{\"description\":\"Repetitions\",\"amount\":\"12\",\"exercise_id\":\"1\"}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -60,12 +60,12 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"id\": 21,\n  \"description\": \"Repetitions\",\n  \"amount\": 12,\n  \"user_id\": 1,\n  \"exercise_id\": 1,\n  \"created_at\": \"2020-07-13T04:35:00.461Z\",\n  \"updated_at\": \"2020-07-13T04:35:00.461Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/users/1/measurements\" -d '{\"description\":\"Repetitions\",\"amount\":\"12\",\"exercise_id\":\"1\"}' -X POST \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/users/1/measurements\" -d '{\"description\":\"Repetitions\",\"amount\":\"12\",\"exercise_id\":\"1\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

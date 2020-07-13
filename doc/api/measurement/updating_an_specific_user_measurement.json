@@ -2,9 +2,9 @@
   "resource": "Measurement",
   "resource_explanation": null,
   "http_method": "PUT",
-  "route": "/users/:user_id/measurements/:id",
+  "route": "/v1/users/:user_id/measurements/:id",
   "description": "Updating an specific user measurement",
-  "explanation": null,
+  "explanation": "Edits a measurement from the login user",
   "parameters": [
     {
       "name": "description",
@@ -29,7 +29,7 @@
   "requests": [
     {
       "request_method": "PUT",
-      "request_path": "/users/1/measurements/1",
+      "request_path": "/v1/users/1/measurements/1",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -44,11 +44,11 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://extracker-api.herokuapp.com/users/1/measurements/1\" -d '' -X PUT \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/users/1/measurements/1\" -d '' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "PUT",
-      "request_path": "/users/1/measurements/1",
+      "request_path": "/v1/users/1/measurements/1",
       "request_body": "{\"description\":\"Seconds\",\"amount\":\"60\",\"exercise_id\":\"1\"}",
       "request_headers": {
         "Content-Type": "application/json",
@@ -63,7 +63,7 @@
       "response_headers": {
       },
       "response_content_type": null,
-      "curl": "curl \"http://extracker-api.herokuapp.com/users/1/measurements/1\" -d '{\"description\":\"Seconds\",\"amount\":\"60\",\"exercise_id\":\"1\"}' -X PUT \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjJ9.J9BGcoSQVQHeACufgpfyO8ctYi_pefeRV-E4S8zXDl4\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/users/1/measurements/1\" -d '{\"description\":\"Seconds\",\"amount\":\"60\",\"exercise_id\":\"1\"}' -X PUT \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

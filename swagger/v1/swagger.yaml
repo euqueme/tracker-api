@@ -1,0 +1,96 @@
+---
+openapi: 3.0.1
+info:
+  title: Exercise tracker API
+  version: v1
+paths:
+  "/v1/signup":
+    post:
+      summary: Creates an user
+      tags:
+      - Signup
+      parameters: []
+      responses:
+        '201':
+          description: New User registered in the database
+          content: {}
+        '422':
+          description: invalid request
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                password_digest:
+                  type: string
+              required:
+              - name
+              - email
+              - password
+              - password_digest
+  "/v1/login":
+    post:
+      summary: Used to login users
+      tags:
+      - Login
+      parameters: []
+      responses:
+        '200':
+          description: Logs in an user and creates a new token
+          content: {}
+        '401':
+          description: invalid credentials
+          content: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/v1/exercises":
+    get:
+      summary: List all exercises
+      tags:
+      - Exercise
+      responses:
+        '200':
+          description: Shows all exercises no authentication is needed
+          content: {}
+  "/v1/exercises/{id}":
+    get:
+      summary: List an specific exercise
+      tags:
+      - Exercise
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Shows an specific exercise no authentication is needed
+          content: {}
+        '401':
+          description: invalid credentials
+          content: {}
+servers:
+- url: http://localhost:3000
+  variables:
+    defaultHost:
+      default: http://localhost:3000

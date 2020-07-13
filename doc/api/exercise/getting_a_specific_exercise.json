@@ -2,9 +2,9 @@
   "resource": "Exercise",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/exercises/:id",
+  "route": "/v1/exercises/:id",
   "description": "Getting a specific exercise",
-  "explanation": null,
+  "explanation": "Shows an specific exercise no authentication is needed",
   "parameters": [
 
   ],
@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/exercises/1",
+      "request_path": "/v1/exercises/1",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"id\": 1,\n  \"name\": \"Enhanced Sight\",\n  \"user_id\": 1,\n  \"created_at\": \"2020-07-13T04:35:00.086Z\",\n  \"updated_at\": \"2020-07-13T04:35:00.086Z\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"http://extracker-api.herokuapp.com/exercises/1\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjF9.B_BkrqeIn48Y91p_bYp2xczhL3FRDhm3zMON7heCJVg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"http://extracker-api.herokuapp.com/v1/exercises/1\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

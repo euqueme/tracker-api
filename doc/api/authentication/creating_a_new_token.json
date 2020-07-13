@@ -2,9 +2,9 @@
   "resource": "Authentication",
   "resource_explanation": null,
   "http_method": "POST",
-  "route": "/login",
+  "route": "/v1/login",
   "description": "Creating a new token",
-  "explanation": null,
+  "explanation": "Logs in a registered user.",
   "parameters": [
     {
       "name": "email",
@@ -21,7 +21,7 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "/login",
+      "request_path": "/v1/login",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -32,17 +32,17 @@
       "request_content_type": "application/json",
       "response_status": 401,
       "response_status_text": "Unauthorized",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"message\": \"Invalid credentials\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/login\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/login\" -d '' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     },
     {
       "request_method": "POST",
-      "request_path": "/login",
-      "request_body": "{\"email\":\"foo@bar.com\",\"password\":\"foobar\"}",
+      "request_path": "/v1/login",
+      "request_body": "{\"email\":\"sherika@ullrich.biz\",\"password\":\"foobar\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org"
@@ -52,12 +52,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[binary data]",
+      "response_body": "{\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTQ3MDEzMDB9.FXiV2eRwCxm-6VasWx4ulq7CpJIig9BXOsC5cU5RhFU\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/login\" -d '{\"email\":\"foo@bar.com\",\"password\":\"foobar\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/login\" -d '{\"email\":\"sherika@ullrich.biz\",\"password\":\"foobar\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

@@ -1,4 +1,4 @@
-class MeasurementsController < ApplicationController
+class V1::MeasurementsController < ApplicationController
   before_action :set_user
   before_action :set_user_measurement, only: %i[show update destroy]
   before_action :check_current_user, only: %i[create update destroy]
