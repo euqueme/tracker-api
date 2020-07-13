@@ -1,5 +1,6 @@
 require 'swagger_helper'
 # rubocop:disable RSpec/EmptyExampleGroup
+# rubocop:disable RSpec/DescribeClass
 describe 'Exercise' do
   path '/v1/exercises' do
     get 'List all exercises' do
@@ -52,3 +53,4 @@ describe 'Exercise' do
   end
 end
 # rubocop:enable RSpec/EmptyExampleGroup
+# rubocop:enable RSpec/DescribeClass
