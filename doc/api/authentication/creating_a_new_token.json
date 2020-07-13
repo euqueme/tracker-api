@@ -42,7 +42,7 @@
     {
       "request_method": "POST",
       "request_path": "/v1/login",
-      "request_body": "{\"email\":\"madelaine@botsford.io\",\"password\":\"foobar\"}",
+      "request_body": "{\"email\":\"tammy@schultz.name\",\"password\":\"foobar\"}",
       "request_headers": {
         "Content-Type": "application/json",
         "Host": "example.org"
@@ -52,12 +52,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTM0NjEyNjB9.5vabfg7hBSql5c7hE5RlkPgKdPt-WyAG0Pg0yEtTwcA\"\n}",
+      "response_body": "{\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTQ3MDA3NjZ9.GlBKSgebVbj_6bds2pYyIa2d2jMW2lO0VBd53ii2k54\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl \"http://extracker-api.herokuapp.com/v1/login\" -d '{\"email\":\"madelaine@botsford.io\",\"password\":\"foobar\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl \"http://extracker-api.herokuapp.com/v1/login\" -d '{\"email\":\"tammy@schultz.name\",\"password\":\"foobar\"}' -X POST \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

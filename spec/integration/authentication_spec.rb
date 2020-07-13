@@ -1,5 +1,6 @@
 require 'swagger_helper'
-
+# rubocop:disable RSpec/EmptyExampleGroup
+# rubocop:disable RSpec/DescribeClass
 describe 'Authentication API' do
   path '/v1/signup' do
     post 'Creates an user' do
@@ -13,7 +14,7 @@ describe 'Authentication API' do
           password: { type: :string },
           password_digest: { type: :string }
         },
-        required: [ 'name', 'email', 'password', 'password_digest' ]
+        required: %w[name email password password_digest]
       }
 
       response '201', 'New User registered in the database' do
@@ -39,9 +40,9 @@ describe 'Authentication API' do
           email: { type: :string },
           password: { type: :string }
         },
-        required: [ 'email', 'password' ]
+        required: %w[email password]
       }
-      
+
       response '200', 'Logs in an user and creates a new token' do
         let(:fuser) { create(:user) }
         let(:user) { { email: fuser.email, password: fuser.password } }
@@ -54,3 +55,5 @@ describe 'Authentication API' do
     end
   end
 end
+# rubocop:enable RSpec/EmptyExampleGroup
+# rubocop:enable RSpec/DescribeClass

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Measurements API' do
+RSpec.describe 'Measurements API', type: :request do
   # Initialize the test data
   let!(:user) { create(:user) }
   let!(:exercise) { create(:exercise, user_id: user.id) }

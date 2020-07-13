@@ -14,5 +14,4 @@ class User < ApplicationRecord
   def to_admin
     update(admin: true)
   end
-
 end

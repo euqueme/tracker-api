@@ -61,3 +61,7 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+
+RSpec/EmptyExampleGroup:
+  CustomIncludeMethods:
+  - include_tests

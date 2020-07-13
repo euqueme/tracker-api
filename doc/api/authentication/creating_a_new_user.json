@@ -60,7 +60,7 @@
       "request_content_type": "application/json",
       "response_status": 201,
       "response_status_text": "Created",
-      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTM0NjEyNjB9.jYQKk0r5XT5Sl-peTgMOq4q3_-V-MdSfgobAWAlsyMw\"\n}",
+      "response_body": "{\n  \"message\": \"Account created successfully\",\n  \"auth_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE1OTQ3MDA3NjZ9.4q0pTtcdohA2NRcbuKiT3777zj-I-vf-PgMdAe5htZA\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

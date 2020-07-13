@@ -15,7 +15,6 @@ RSpec.describe 'Exercises API', type: :request do
 
     it 'returns exercises' do
       # Note `json` is a custom helper to parse JSON responses
-      expect(json).not_to be_empty
       expect(json.size).to eq(10)
     end
 
@@ -30,7 +29,6 @@ RSpec.describe 'Exercises API', type: :request do
 
     context 'when the record exists' do
       it 'returns the exercise' do
-        expect(json).not_to be_empty
         expect(json['id']).to eq(exercise_id)
       end
 

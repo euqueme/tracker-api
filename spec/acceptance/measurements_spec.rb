@@ -27,7 +27,7 @@ resource 'Measurement', acceptance: true do
   end
 
   post '/v1/users/:user_id/measurements' do
-    route_summary 'This is used to create user measurements.' 
+    route_summary 'This is used to create user measurements.'
     let(:user_id) { user.id }
 
     parameter :description, 'Measurement description'

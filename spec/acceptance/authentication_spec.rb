@@ -8,7 +8,7 @@ resource 'Authentication', acceptance: true do
 
   post '/v1/signup' do
     route_summary 'This is used to create users.'
-    
+
     parameter :name, 'User name'
     parameter :email, 'User email'
     parameter :password, 'User password'
@@ -23,7 +23,7 @@ resource 'Authentication', acceptance: true do
 
   post '/v1/login' do
     route_summary 'This is used to login users.'
-    
+
     parameter :email, 'User email'
     parameter :password, 'User password'
 
