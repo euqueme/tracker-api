@@ -2,9 +2,9 @@
   "resource": "Exercise",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/exercises",
+  "route": "/v1/exercises",
   "description": "Listing exercises",
-  "explanation": "List all the exercises in the system",
+  "explanation": "List all the exercises in the system no authentication is needed",
   "parameters": [
 
   ],
@@ -14,7 +14,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/exercises",
+      "request_path": "/v1/exercises",
       "request_body": null,
       "request_headers": {
         "Content-Type": "application/json",
@@ -25,12 +25,12 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "[binary data]",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Biokinesis\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.050Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.050Z\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Substance Secretion\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.052Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.052Z\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Magic Resistance\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.055Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.055Z\"\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Molecular Immobilization\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.057Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.057Z\"\n  },\n  {\n    \"id\": 5,\n    \"name\": \"The Force\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.059Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.059Z\"\n  },\n  {\n    \"id\": 6,\n    \"name\": \"Seismic Power\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.061Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.061Z\"\n  },\n  {\n    \"id\": 7,\n    \"name\": \"Energy Manipulation\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.063Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.063Z\"\n  },\n  {\n    \"id\": 8,\n    \"name\": \"Death Touch\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.065Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.065Z\"\n  },\n  {\n    \"id\": 9,\n    \"name\": \"Sonar\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.067Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.067Z\"\n  },\n  {\n    \"id\": 10,\n    \"name\": \"Self-Sustenance\",\n    \"user_id\": 1,\n    \"created_at\": \"2020-07-13T04:35:00.070Z\",\n    \"updated_at\": \"2020-07-13T04:35:00.070Z\"\n  }\n]",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },
       "response_content_type": "application/json; charset=utf-8",
-      "curl": "curl -g \"http://extracker-api.herokuapp.com/exercises\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1OTE4OTYwMjF9.B_BkrqeIn48Y91p_bYp2xczhL3FRDhm3zMON7heCJVg\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+      "curl": "curl -g \"http://extracker-api.herokuapp.com/v1/exercises\" -X GET \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
     }
   ]
 }

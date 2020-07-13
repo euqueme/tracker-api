@@ -8,14 +8,14 @@
           "description": "Creating a new  User",
           "link": "authentication/creating_a_new_user.json",
           "groups": "all",
-          "route": "/signup",
+          "route": "/v1/signup",
           "method": "post"
         },
         {
           "description": "Creating a new token",
           "link": "authentication/creating_a_new_token.json",
           "groups": "all",
-          "route": "/login",
+          "route": "/v1/login",
           "method": "post"
         }
       ]
@@ -28,28 +28,28 @@
           "description": "Listing exercises",
           "link": "exercise/listing_exercises.json",
           "groups": "all",
-          "route": "/exercises",
+          "route": "/v1/exercises",
           "method": "get"
         },
         {
           "description": "Getting a specific exercise",
           "link": "exercise/getting_a_specific_exercise.json",
           "groups": "all",
-          "route": "/exercises/:id",
+          "route": "/v1/exercises/:id",
           "method": "get"
         },
         {
           "description": "Creating a new exercise",
           "link": "exercise/creating_a_new_exercise.json",
           "groups": "all",
-          "route": "/exercises",
+          "route": "/v1/exercises",
           "method": "post"
         },
         {
           "description": "Updating an specific exercise",
           "link": "exercise/updating_an_specific_exercise.json",
           "groups": "all",
-          "route": "/exercises/:id",
+          "route": "/v1/exercises/:id",
           "method": "put"
         }
       ]
@@ -62,28 +62,28 @@
           "description": "Listing measurements",
           "link": "measurement/listing_measurements.json",
           "groups": "all",
-          "route": "/users/:user_id/measurements",
+          "route": "/v1/users/:user_id/measurements",
           "method": "get"
         },
         {
           "description": "Getting a specific measurement from the login user",
           "link": "measurement/getting_a_specific_measurement_from_the_login_user.json",
           "groups": "all",
-          "route": "/users/:user_id/measurements/:id",
+          "route": "/v1/users/:user_id/measurements/:id",
           "method": "get"
         },
         {
           "description": "Creating a new user measurement",
           "link": "measurement/creating_a_new_user_measurement.json",
           "groups": "all",
-          "route": "/users/:user_id/measurements",
+          "route": "/v1/users/:user_id/measurements",
           "method": "post"
         },
         {
           "description": "Updating an specific user measurement",
           "link": "measurement/updating_an_specific_user_measurement.json",
           "groups": "all",
-          "route": "/users/:user_id/measurements/:id",
+          "route": "/v1/users/:user_id/measurements/:id",
           "method": "put"
         }
       ]

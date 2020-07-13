@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   Exclude:
     - "db/**/*"
@@ -49,15 +51,9 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: false
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: false
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
-  Enabled: false
-Style/ExponentialNotation:
   Enabled: false
 Style/HashEachMethods:
   Enabled: false
@@ -65,5 +61,7 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Style/SlicingWithRange:
-  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  CustomIncludeMethods:
+  - include_tests

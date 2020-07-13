@@ -1,4 +1,4 @@
-class ExercisesController < ApplicationController
+class V1::ExercisesController < ApplicationController
   before_action :set_exercise, only: %i[show update destroy]
   before_action :check_admin, only: %i[create update destroy]
   skip_before_action :authorize_request, only: %i[index show]
